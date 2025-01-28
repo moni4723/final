@@ -7,14 +7,32 @@ import jakarta.persistence.*;
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-generates the ID
-    private Long id; // Primary Key
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
+    @Column(name = "name", nullable = false)
     private String name;
+
+    @Column(name = "department")
     private String department;
+
+    @Column(name = "salary")
     private double salary;
 
-    // Getters and Setters
+    @Column(name = "age")
+    private int age;
+
+    @Column(name = "address")
+    private String address;
+
+    @Column(name = "designation")
+    private String designation;
+
+    @Column(name = "experience")
+    private double experience;
+
+
+
     public Long getId() {
         return id;
     }
@@ -47,13 +65,49 @@ public class Employee {
         this.salary = salary;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getDesignation() {
+        return designation;
+    }
+
+    public void setDesignation(String designation) {
+        this.designation = designation;
+    }
+
+    public double getExperience() {
+        return experience;
+    }
+
+    public void setExperience(double experience) {
+        this.experience = experience;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", position='" + department + '\'' +
+                ", department='" + department + '\'' +
                 ", salary=" + salary +
+                ", age=" + age +
+                ", address='" + address + '\'' +
+                ", designation='" + designation + '\'' +
+                ", experience=" + experience +
                 '}';
     }
 }
